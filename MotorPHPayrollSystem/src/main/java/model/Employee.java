@@ -159,18 +159,14 @@ public class Employee {
      */
     public double getClothingAllowance() { return clothingAllowance; }
 
-    /**
-     * Provides a string representation of the Employee.
-     * Overrides the default toString() method from Object class - polymorphism.
-     * 
-     * @return A formatted string containing employee details
-     */
-    @Override
-    public String toString() {
-        return String.format(
-                "Employee Number: %s\nName: %s\nBirthdate: %s\nAddress: %s\nPhone Number: %s\nTIN#: %s\nSSS#: %s\nPhilHealth#: %s\nPag-IBIG#: %s\nStatus: %s\nPosition: %s\nSupervisor: %s\nBasic Salary: PHP %.2f\nRice Subsidy: PHP %.2f\nPhone Allowance: PHP %.2f\nClothing Allowance: PHP %.2f",
-                employeeNumber, getFullName(), birthDate, address, contactNumber, tinNumber, sssNumber, philHealthNumber,
-                pagIbigNumber, employmentStatus, position, supervisor, basicSalary, riceSubsidy, phoneAllowance, clothingAllowance
-        );
-    }
+     /**
+ * Extended toString implementation - provides specific employee details
+ */
+@Override
+public String toString() {
+    return super.toString() + String.format(
+            "\nStatus: %s\nPosition: %s\nSupervisor: %s\nBasic Salary: PHP %.2f\nRice Subsidy: PHP %.2f\nPhone Allowance: PHP %.2f\nClothing Allowance: PHP %.2f",
+            employmentStatus, position, supervisor, basicSalary, riceSubsidy, phoneAllowance, clothingAllowance
+);
+}
 }
